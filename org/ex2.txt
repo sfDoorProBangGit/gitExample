@@ -1,7 +1,4 @@
-a2fca88
-
-ecb5084 (HEAD -> master) texst.txt add
-a2fca88 
+ (HEAD -> master) texst.txt add 
 
 $ git log --oneline
 a2fca88 (HEAD -> main, origin/main) my first commit
