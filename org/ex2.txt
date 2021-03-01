@@ -1,0 +1,100 @@
+a2fca88
+
+ecb5084 (HEAD -> master) texst.txt add
+a2fca88 
+
+$ git log --oneline
+a2fca88 (HEAD -> main, origin/main) my first commit
+
+https://github.com/sfDoorProBangGit/gitExample.git
+
+https://github.com/sfDoorProBangGit/gitExample.git
+
+git bash의 붙여넣기 단축키는 ctrl+v가 아니라 shift+ insert 입니다.
+
+IEUser@IE11WIN10 MINGW64 ~
+IEUser[사용자 이름]@[at]IE11WIN10[컴퓨터 이름] MINGW64[bash이름] ~[현재위치]
+
+로 이해하시면 됩니다.MINGW64는 현재 실행중인 bash 프로그램 이름이고, $는 입력대기를 나타냅니다. 
+현재 폴더 위치가 ~로 되어있는데, 이것은 해당 컴퓨터 사용자의 기본 폴더 위치로, 
+윈도우 사용자는 c:/Users/[사용자 이름]과 같습니다.
+
+Bash 명령어
+cd [폴더이름]
+해당 디렉토리(폴더)로 이동합니다.﻿
+cd documents﻿ 현재폴더의 하위폴더인 documents 폴더로 이동
+cd /c/workspace﻿ 절대경로 /c/workspace﻿ 로 이동
+cd .. 상위 폴더로 이동 
+
+mkdir [폴더이름]
+디렉토리(폴더)를 생성합니다.
+mkdir workspace﻿ 현재폴더에 workspace 폴더를 생성
+
+touch [파일이름]
+빈 파일을 생성합니다.
+touch index.js 현재폴더에 index.js 파일을 생성
+
+ls 
+현재 디렉토리 안에 있는 파일및 폴더들을 보여줍니다.
+
+ls
+c:\workspace\myapp 폴더를 만들고 app.js를 생성해 봅시다.
+
+
+
+처음에는 '윈도우탐색기쓰면 되지 이걸 왜하나'하겠지만.. 쓰다보면 이게 훨씬 빠릅니다. 
+git, node를 쓰기 위해선 몇몇 명령어는 꼭 터미널에서 입력해야하는 것들도 있구요. 
+익숙해지면 탐색기(windows), finder(mac)는 path가 복잡한 폴더 복사할때, 
+여러파일 중에 일부만 선택해서 지우거나 복사해야 하는 경우를 제외하고는 거의 쓸 일이 없어집니다. 
+위에 적힌 것들 말고도 유용한 명령어가 많으니 따로 검색해서 공부합시다.
+
+++Git 사용법
+
+Git 사용자 등록
+git을 사용하기 위해서는 user.email과 user.name을 등록해야 합니다. 
+아래 두개의 명령어는 git을 설치하고 한번만 해주시면 됩니다.
+
+git config --global user.email "[이메일주소]" email을 등록﻿
+git config --global user.name "[이름]" name을 등록
+
+Git 저장소 생성 및 commit 생성
+저장소를 생성하고, 저장할 파일을 선택한 다음, commit을 만들었습니다. 그리고 commit 리스트를 출력하였습니다.
+
+각각의 명령어를 살펴봅시다.
+
+git init 해당 폴더에 git을 사용할 것을 알립니다.
+git init을 입력하면 master branch가 생성되고 git bash 현재 폴더 명에 branch 이름(master)이 추가됩니다.
+
+(master)가 보인다면(혹은 다른 branch 이름이 보인다면) 해당 폴더는 git 저장소가 설정된 폴더임을 알 수 있습니다.
+
+실제로 일어나는 일은 .git이라는 숨김 폴더가 해당 폴더에 생성되고 git관련 파일들이 생성됩다. 
+이 .git 폴더는 절대 건드리는 일이 없도록 합시다.
+git add . 현재 폴더의 파일들과 하위 폴더의 파일 모두를 저장할 대상으로 지정합니다.
+git add가 명령어 이고, .이 옵션입니다. . 대신 -A를 사용해도 동일합니다. 
+혹은 각각의 파일이름을 하나하나 지정할 수도 있습니다.
+
+git commit -m "[메세지]" ﻿commit 을 생성합니다.
+commit이 세이브라고 보시면 됩니다. -m은 저장과 동시에 메세지를 남긴다는 옵션이고, 사실 말이 옵션이지 필수입니다. 
+"" 안에 메세지를 입력하시면 됩니다.
+
+git log --oneline 현재 저장된 commit list를 보여줍니다
+git log뒤에 --oneline은 한 commit을 요약해서 한줄에 보여주는 옵션입니다. 
+위 예제(스크린샷)에서 f159c55 는 commit id의 처음 7자리입니다. 이 7자리만으로도 명령을 수행할 수 있습니다.
+
+이전 commit으로 되돌아가기
+현재 app.js파일이 commit되어 있는데, 새로운 파일(text.txt)을 등록했다가 다시 되돌려 보겠습니다.
+
+53fb38e가 등록되었습니다.
+
+다시 f159c55로 돌아가 봅시다.
+
+
+
+처음 ls에서는 app.js와 text.txt가 있었는데, git reset을 한 다음에는 다시 app.js만 있는 것을 알 수 있습니다.
+
+단순히 파일의 생성과 삭제만 관리하는 것이 아니라 실제로는 파일 내용까지 commit에 저장되었다가 reset을 하면 그때의 파일 상태로 돌아갑니다.
+
+git reset --hard [commit id] 해당 commit으로 돌아갑니다.
+git reset의 option은 --hard, --soft가 있는데 --hard는 commit당시의 상태로 완전히 되돌리고, --soft는 git commit만 취소하고 파일들은 현재상태를 유지합니다. 즉 위 예제에서 --soft를 쓰고 git log를 하면 53fb38e은 보이지 않지만 실제 text.txt는 사라지지 않습니다. 보통 commit을 취소하거나 마지막 commit들을 취소한 후 하나의 commit으로 만들때 사용됩니다.
+
+간단하게 commit으로 폴더를 저장하고 불러오는 방법을 익혀 보았는데, 이는 git의 기본 기능일 뿐입니다. branch를 만들어서 코드를 관리하고 협업을 할 수 있는데, 이 부분은 다루지 않겠습니다. 찾아보고 공부해 주세요.
